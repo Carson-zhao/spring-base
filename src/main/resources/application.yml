@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    names:
+       - database: dataSource0
+         username: root
+         password: zrb196852
+         jdbc-url: jdbc:mysql://localhost:3306/test_user?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+         driver-class-name: com.mysql.cj.jdbc.Driver
+
+       - database: dataSource1
+         username: root
+         password: zrb196852
+         jdbc-url: jdbc:mysql://139.9.196.138:3306/test_user?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+         driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.xiaozhao.domain
+
+#showSql
+logging:
+  level:
+    com.jty.*.dao: debug
+server:
+  port: 8080
